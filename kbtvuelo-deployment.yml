@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: kbtvuelo-app
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: kbtvuelo
@@ -15,7 +15,7 @@ spec:
       containers:
         - name: kbtvuelo-app
           image: kbtvuelo-app:latest
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8089
           env:
